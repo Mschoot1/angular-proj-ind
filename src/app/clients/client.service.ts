@@ -40,10 +40,10 @@ export class ClientService {
     })
       .toPromise()
       .then(response => {
-        return Promise.resolve(response as Client);
+        return response as Client;
       })
       .catch(error => {
-        return Promise.reject(error.message || error);
+        return error.message || error;
       });
   }
 
@@ -61,7 +61,7 @@ export class ClientService {
         return client;
       })
       .catch(error => {
-        return Promise.reject(error.message || error);
+        return error.message || error;
       });
   }
 
@@ -79,7 +79,7 @@ export class ClientService {
         return client;
       })
       .catch(error => {
-        return Promise.reject(error.message || error);
+        return error.message || error;
       });
   }
 
@@ -95,10 +95,10 @@ export class ClientService {
         const client = response as Client;
         this.clients.splice(this.findIndexById(id), 1);
         this.clientsChanged.next(this.clients.slice());
-        return Promise.resolve(response as Client);
+        return client;
       })
       .catch(error => {
-        return Promise.reject(error.message || error);
+        return error.message || error;
       });
   }
 

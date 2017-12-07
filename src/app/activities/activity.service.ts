@@ -41,10 +41,10 @@ export class ActivityService {
     })
       .toPromise()
       .then(response => {
-        return Promise.resolve(response as Activity);
+        return response as Activity;
       })
       .catch(error => {
-        return Promise.reject(error.message || error);
+        return error.message || error;
       });
   }
 

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a routerLink="/" class="navbar-brand">Proj Ind</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul *ngIf="loggedIn()" class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="/shifts">Shifts</a></li>
+        <li routerLinkActive="active"><a routerLink="/clients">Clients</a></li>
+        <li routerLinkActive="active"><a routerLink="/activities">Activities</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <ng-template [ngIf]="!loggedIn()">
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="/register">Register</a></li>
+        </ng-template>
+        <ng-template [ngIf]="loggedIn()">
+          <li><p class="navbar-text">Hello {{ username() }}</p></li>
+          <li style="cursor: pointer;"><a (click)="onLogout()">Logout</a></li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</nav>

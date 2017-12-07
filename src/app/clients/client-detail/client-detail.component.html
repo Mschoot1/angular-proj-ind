@@ -1,0 +1,16 @@
+<h1>{{ client.firstName }} {{ client.infix  }} {{ client.lastName }}</h1>
+<p>{{ client.address.streetName }} {{ client.address.homeNumber }}</p>
+<p>{{ client.address.city }}</p>
+<div
+  class="btn-group"
+  appDropdown>
+  <button
+    type="button"
+    class="btn btn-primary dropdown-toggle">
+    Manage Client<span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a style="cursor: pointer;" (click)="onEditClient()">Edit Client</a></li>
+    <li><a style="cursor: pointer;" (click)="onDeleteClient()">Delete Client</a></li>
+  </ul>
+</div>

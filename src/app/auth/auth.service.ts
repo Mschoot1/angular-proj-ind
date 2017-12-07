@@ -26,26 +26,26 @@ export class AuthService {
     return tokenNotExpired();
   }
 
-  public login(body): Promise<string> {
+  public login(body) {
     return this.http.post(this.serverUrl + '/login', body, {headers: this.headers})
       .toPromise()
       .then(response => {
         localStorage.setItem('username', (response as LoginResponse).username);
-        return Promise.resolve((response as LoginResponse).token);
+        return (response as LoginResponse).token;
       })
       .catch(error => {
-        return Promise.reject(error);
+        return error;
       });
   }
 
-  public register(body): Promise<{}> {
+  public register(body) {
     return this.http.post(this.serverUrl + '/register', body, {headers: this.headers})
       .toPromise()
       .then(response => {
-        return Promise.resolve(response);
+        return response;
       })
       .catch(error => {
-        return Promise.reject(error);
+        return error;
       });
   }
 }

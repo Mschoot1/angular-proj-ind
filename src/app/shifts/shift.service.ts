@@ -18,7 +18,7 @@ export class ShiftService implements OnInit {
   ngOnInit() {
   }
 
-  public getShifts(): Promise<Shift[]> {
+  public getShifts() {
     return this.http.get(this.serverUrl + '/shifts', {
       headers: this.headers.append(
         'Authorization', 'Bearer ' + localStorage.getItem('token')
@@ -29,7 +29,7 @@ export class ShiftService implements OnInit {
         return response as Shift[];
       })
       .catch(error => {
-        return Promise.reject(error.message || error);
+        return error.message || error;
       });
   }
 }

@@ -26,7 +26,6 @@ import {ScheduleEditComponent} from './schedules/schedule-edit/schedule-edit.com
 import {ScheduleListComponent} from './schedules/schedule-list/schedule-list.component';
 import {ScheduleService} from './schedules/schedule.service';
 import {MovieService} from './movies/movie.service';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ReservationService} from './reservations/reservation.service';
 import {ReservationsComponent} from './reservations/reservations.component';
 import {ReservationDetailComponent} from './reservations/reservation-detail/reservation-detail.component';
@@ -57,7 +56,6 @@ import {ReservationEditComponent} from './reservations/reservation-edit/reservat
     MovieListComponent
   ],
   imports: [
-    NgbModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

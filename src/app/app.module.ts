@@ -14,14 +14,7 @@ import {CinemasComponent} from './cinemas/cinemas.component';
 import {UsersComponent} from './users/users.component';
 import {CinemaService} from './cinemas/cinema.service';
 import {DropDownDirective} from './shared/dropdown.directive';
-import {CinemaListComponent} from './cinemas/cinema-list/cinema-list.component';
-import {CinemaEditComponent} from './cinemas/cinema-edit/cinema-edit.component';
-import {CinemaItemComponent} from './cinemas/cinema-item/cinema-item.component';
-import {CinemaDetailComponent} from './cinemas/cinema-detail/cinema-detail.component';
 import {HallsComponent} from './halls/halls.component';
-import {HallListComponent} from './halls/hall-list/hall-list.component';
-import {HallDetailComponent} from './halls/hall-detail/hall-detail.component';
-import {HallEditComponent} from './halls/hall-edit/hall-edit.component';
 import {HallService} from './halls/hall.service';
 import {MoviesComponent} from './movies/movies.component';
 import {MovieDetailComponent} from './movies/movie-detail/movie-detail.component';
@@ -34,41 +27,34 @@ import {ScheduleListComponent} from './schedules/schedule-list/schedule-list.com
 import {ScheduleService} from './schedules/schedule.service';
 import {MovieService} from './movies/movie.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { ReservationsComponent } from './reservations/reservations.component';
-import { ReservationListComponent } from './reservations/reservation-list/reservation-list.component';
-import { ReservationEditComponent } from './reservations/reservation-edit/reservation-edit.component';
-import { ReservationDetailComponent } from './reservations/reservation-detail/reservation-detail.component';
 import {ReservationService} from './reservations/reservation.service';
+import {ReservationsComponent} from './reservations/reservations.component';
+import {ReservationDetailComponent} from './reservations/reservation-detail/reservation-detail.component';
+import {ReservationListComponent} from './reservations/reservation-list/reservation-list.component';
+import {ReservationEditComponent} from './reservations/reservation-edit/reservation-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HallsComponent,
-    HallListComponent,
     RegisterComponent,
     LoginComponent,
     SchedulesComponent,
     CinemasComponent,
     UsersComponent,
     ScheduleListComponent,
-    HallDetailComponent,
     DropDownDirective,
-    HallEditComponent,
     ScheduleEditComponent,
     ScheduleDetailComponent,
-    CinemaListComponent,
-    CinemaEditComponent,
-    CinemaItemComponent,
-    CinemaDetailComponent,
+    ReservationsComponent,
+    ReservationDetailComponent,
+    ReservationListComponent,
+    ReservationEditComponent,
     MoviesComponent,
     MovieDetailComponent,
     MovieEditComponent,
-    MovieListComponent,
-    ReservationsComponent,
-    ReservationListComponent,
-    ReservationEditComponent,
-    ReservationDetailComponent
+    MovieListComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -78,7 +64,7 @@ import {ReservationService} from './reservations/reservation.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [CinemaService, ScheduleService, HallService, AuthService, MovieService, ReservationService, AuthGuard],
+  providers: [ReservationService, CinemaService, ScheduleService, HallService, AuthService, MovieService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,4 +1,7 @@
 <ng-template [ngIf]="searchQuery">
+  <div class="col-12">
+    <button style="cursor: pointer;" class="float-right btn btn-default" (click)="onNewMovie()">New Movie</button>
+  </div>
   <a routerLink="/movies"><- Back to All</a>
   <h2>Searchresults for "{{searchQuery}}"</h2>
 </ng-template>

@@ -7,9 +7,6 @@ import {AuthGuard} from './auth/auth-guard.service';
 import {SchedulesComponent} from './schedules/schedules.component';
 import {ScheduleEditComponent} from './schedules/schedule-edit/schedule-edit.component';
 import {ScheduleDetailComponent} from './schedules/schedule-detail/schedule-detail.component';
-import {CinemasComponent} from './cinemas/cinemas.component';
-import {CinemaEditComponent} from './cinemas/cinema-edit/cinema-edit.component';
-import {CinemaDetailComponent} from './cinemas/cinema-detail/cinema-detail.component';
 import {MoviesComponent} from './movies/movies.component';
 import {MovieEditComponent} from './movies/movie-edit/movie-edit.component';
 import {MovieDetailComponent} from './movies/movie-detail/movie-detail.component';
@@ -19,13 +16,6 @@ import {ReservationDetailComponent} from './reservations/reservation-detail/rese
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/movies', pathMatch: 'full'},
-  {
-    path: 'cinemas', component: CinemasComponent, children: [
-      {path: 'new', component: CinemaEditComponent},
-      {path: ':_id', component: CinemaDetailComponent},
-      {path: ':_id/edit', component: CinemaEditComponent}
-    ], canActivate: [AuthGuard]
-  },
   {
     path: 'movies', component: MoviesComponent, children: [
       {path: 'new', component: MovieEditComponent},

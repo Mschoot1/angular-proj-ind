@@ -3,6 +3,7 @@ import {Reservation} from '../reservation.model';
 import {ReservationService} from '../reservation.service';
 import {Subscription} from 'rxjs/Subscription';
 import {Movie} from '../../movies/movie.model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-reservation-list',
@@ -17,7 +18,9 @@ export class ReservationListComponent implements OnInit {
   subscription: Subscription;
   private _reservations: Reservation[];
 
-  constructor(private reservationService: ReservationService) {
+  constructor(private reservationService: ReservationService,
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -29,5 +32,9 @@ export class ReservationListComponent implements OnInit {
           this._reservations = reservations;
         }
       );
+  }
+
+  onNewReservation() {
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 }

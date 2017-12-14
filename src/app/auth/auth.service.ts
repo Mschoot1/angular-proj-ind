@@ -5,7 +5,6 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {tokenNotExpired} from 'angular2-jwt';
 import {Router} from '@angular/router';
 import {Subject} from 'rxjs/Subject';
-import {Client} from '../clients/client.model';
 
 interface LoginResponse {
   token: string;

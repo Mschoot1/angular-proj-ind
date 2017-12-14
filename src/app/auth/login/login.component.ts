@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.loggedIn()) {
-      this.navigateToShifts();
+      this.navigateToHome();
     }
   }
 
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       .then(response => {
         localStorage.setItem('token', response);
         this._invalidCredentials = false;
-        this.navigateToShifts();
+        this.navigateToHome();
       })
       .catch(error => {
         this._invalidCredentials = error.status === 401;
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  navigateToShifts() {
-    this.router.navigate(['/shifts']);
+  navigateToHome() {
+    this.router.navigate(['/']);
   }
 }

@@ -1,0 +1,15 @@
+<h1>{{ cinema.name }}</h1>
+<p>{{ cinema.description }}</p>
+<div
+  class="btn-group"
+  appDropdown>
+  <button
+    type="button"
+    class="btn btn-primary dropdown-toggle">
+    Manage Cinema<span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a style="cursor: pointer;" (click)="onEditCinema()">Edit Cinema</a></li>
+    <li><a style="cursor: pointer;" (click)="onDeleteCinema()">Delete Cinema</a></li>
+  </ul>
+</div>

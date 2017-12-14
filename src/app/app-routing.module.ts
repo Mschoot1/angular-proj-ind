@@ -1,40 +1,50 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {ClientsComponent} from './clients/clients.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {LoginComponent} from './auth/login/login.component';
 import {AuthGuard} from './auth/auth-guard.service';
-import {ShiftsComponent} from './shifts/shifts.component';
-import {ClientDetailComponent} from './clients/client-detail/client-detail.component';
-import {ClientEditComponent} from './clients/client-edit/client-edit.component';
-import {ShiftEditComponent} from './shifts/shift-edit/shift-edit.component';
-import {ShiftDetailComponent} from './shifts/shift-detail/shift-detail.component';
-import {ActivitiesComponent} from './activities/activities.component';
-import {ActivityEditComponent} from './activities/activity-edit/activity-edit.component';
-import {ActivityDetailComponent} from './activities/activity-detail/activity-detail.component';
+import {SchedulesComponent} from './schedules/schedules.component';
+import {ScheduleEditComponent} from './schedules/schedule-edit/schedule-edit.component';
+import {ScheduleDetailComponent} from './schedules/schedule-detail/schedule-detail.component';
+import {CinemasComponent} from './cinemas/cinemas.component';
+import {CinemaEditComponent} from './cinemas/cinema-edit/cinema-edit.component';
+import {CinemaDetailComponent} from './cinemas/cinema-detail/cinema-detail.component';
+import {MoviesComponent} from './movies/movies.component';
+import {MovieEditComponent} from './movies/movie-edit/movie-edit.component';
+import {MovieDetailComponent} from './movies/movie-detail/movie-detail.component';
+import {ReservationsComponent} from './reservations/reservations.component';
+import {ReservationEditComponent} from './reservations/reservation-edit/reservation-edit.component';
+import {ReservationDetailComponent} from './reservations/reservation-detail/reservation-detail.component';
 
 const appRoutes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '', redirectTo: '/movies', pathMatch: 'full'},
   {
-    path: 'clients', component: ClientsComponent, children: [
-      {path: 'new', component: ClientEditComponent},
-      {path: ':_id', component: ClientDetailComponent},
-      {path: ':_id/edit', component: ClientEditComponent}
+    path: 'cinemas', component: CinemasComponent, children: [
+      {path: 'new', component: CinemaEditComponent},
+      {path: ':_id', component: CinemaDetailComponent},
+      {path: ':_id/edit', component: CinemaEditComponent}
     ], canActivate: [AuthGuard]
   },
   {
-    path: 'shifts', component: ShiftsComponent, children: [
-      {path: 'new', component: ShiftEditComponent},
-      {path: ':_id', component: ShiftDetailComponent},
-      {path: ':_id/edit', component: ShiftEditComponent}
+    path: 'movies', component: MoviesComponent, children: [
+      {path: 'new', component: MovieEditComponent},
+      {path: ':title', component: MovieDetailComponent},
+      {path: ':title/edit', component: MovieEditComponent}
     ], canActivate: [AuthGuard]
   },
   {
-    path: 'activities', component: ActivitiesComponent, children: [
-      {path: 'new', component: ActivityEditComponent},
-      {path: ':_id', component: ActivityDetailComponent},
-      {path: ':_id/edit', component: ActivityEditComponent}
+    path: 'schedules', component: SchedulesComponent, children: [
+      {path: 'new', component: ScheduleEditComponent},
+      {path: ':_id', component: ScheduleDetailComponent},
+      {path: ':_id/edit', component: ScheduleEditComponent}
+    ], canActivate: [AuthGuard]
+  },
+  {
+    path: 'reservations', component: ReservationsComponent, children: [
+      {path: 'new', component: ReservationEditComponent},
+      {path: ':_id', component: ReservationDetailComponent},
+      {path: ':_id/edit', component: ReservationEditComponent}
     ], canActivate: [AuthGuard]
   },
   {path: 'register', component: RegisterComponent},

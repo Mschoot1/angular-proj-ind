@@ -1,10 +1,11 @@
-import { Directive, HostListener, HostBinding } from '@angular/core';
+import {Directive, HostListener, HostBinding, ContentChild} from '@angular/core';
 
 @Directive({
-  selector: '[appDropdown]'
+  selector: '[appDropDown]'
 })
-export class DropdownDirective {
-  @HostBinding('class.open') isOpen = false;
+export class DropDownDirective {
+  @HostBinding('class.show') isOpen = false;
+  @ContentChild('button aria-expanded.true')
 
   @HostListener('click') toggleOpen() {
     this.isOpen = !this.isOpen;

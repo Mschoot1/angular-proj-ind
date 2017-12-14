@@ -20,7 +20,6 @@ import {CinemaItemComponent} from './cinemas/cinema-item/cinema-item.component';
 import {CinemaDetailComponent} from './cinemas/cinema-detail/cinema-detail.component';
 import {HallsComponent} from './halls/halls.component';
 import {HallListComponent} from './halls/hall-list/hall-list.component';
-import {HallItemComponent} from './halls/hall-item/hall-item.component';
 import {HallDetailComponent} from './halls/hall-detail/hall-detail.component';
 import {HallEditComponent} from './halls/hall-edit/hall-edit.component';
 import {HallService} from './halls/hall.service';
@@ -53,7 +52,6 @@ import {ReservationService} from './reservations/reservation.service';
     CinemasComponent,
     UsersComponent,
     ScheduleListComponent,
-    HallItemComponent,
     HallDetailComponent,
     DropDownDirective,
     HallEditComponent,

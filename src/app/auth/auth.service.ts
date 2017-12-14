@@ -21,8 +21,12 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
-  public loggedIn(): boolean {
+  loggedIn(): boolean {
     return tokenNotExpired();
+  }
+
+  username(): string {
+    return localStorage.getItem('username');
   }
 
   public login(body) {

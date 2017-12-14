@@ -31,6 +31,7 @@ import {ReservationsComponent} from './reservations/reservations.component';
 import {ReservationDetailComponent} from './reservations/reservation-detail/reservation-detail.component';
 import {ReservationListComponent} from './reservations/reservation-list/reservation-list.component';
 import {ReservationEditComponent} from './reservations/reservation-edit/reservation-edit.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import {ReservationEditComponent} from './reservations/reservation-edit/reservat
     MovieListComponent
   ],
   imports: [
+    NgbModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
